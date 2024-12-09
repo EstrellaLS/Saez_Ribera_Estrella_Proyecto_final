@@ -19,9 +19,9 @@
             return (-1);
         }
     }
-
+    
     function encriptar($psswrd){
-        $enc=md5(md5(md5(md5(md5($psswrd)))));
+        $enc=md5($psswrd);
         return $enc;
     }
 
@@ -251,28 +251,36 @@
 
     function pintar_footer(){
         echo"</main>
-        <footer class='d-flex flex-column align-items-center p-3'>
-            <div class='row w-75 py-3'>
-                <div class='col-12 d-flex justify-content-around'>
-                    <span>proyectoFILOS</span>
-                    <span>NUESTRAS campoS</span>
-                    <span>proyectoS VARIAS</span>
-                    <span>PARA TODA LA FAMILIA</span>
-                    <span>ESTRENOS EXCLUSIVOS</span>  
-                </div>          
-            </div>
-            <div class='row w-50 pb-3'>
+        <footer>
+            <div id='loc'>
                 <div>
-                    <div class='col-12 d-flex justify-content-around pb-3'>
-                        <span>Política de cookies</span>
-                        <span>Condiciones de uso</span>
-                        <span>Atención al cliente</span>
-                        <span>Política de privacidad</span>
-                    </div>
-                    <div class='col-12 d-flex justify-content-around'>                    
-                        <span>@2024proyectofilos</span> 
-                    </div>
-                </div>           
+                    <ul class='contacto'>     
+                        <li><span class='fa-solid fa-phone'></span> +32 654.123.123</li>
+                        <li>
+                            <a href='https://www.google.com/intl/es/gmail/about/' target='_blank'><span class='fa-regular fa-envelope'></span></a>
+                            estrellasaezribera@gmail.com
+                        </li>  
+                        <li>   
+                            <span>@2024EstrellaLSR</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.0735552007054!2d-3.6015063!3d37.1747229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fcbe20b6b829%3A0x75033977e293305d!2sEscuela%20de%20Arte%20y%20Superior%20de%20Dise%C3%B1o%20Jos%C3%A9%20Val%20del%20Omar%20de%20Granada!5e0!3m2!1ses!2ses!4v1733764639631!5m2!1ses!2ses' width='300' height='100' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
+                </div>
+            </div>
+            <div id='redes'>
+                <ul class='enlaces'>
+                    <li><a href='https://web.telegram.org/k/' target='_blank'><span class='fa-brands fa-telegram'></span></a></li>
+                    <li><a href='https://www.facebook.com/' target='_blank'><span class='fa-brands fa-facebook'></span></a></li>
+                    <li><a href='https://www.youtube.com/' target='_blank'><span class='fa-brands fa-youtube'></span></a></li>
+                    <li><a href='https://www.tiktok.com/es/' target='_blank'><span class='fa-brands fa-tiktok'></span></a></li>
+                    <li><a href='https://www.reddit.com/?rdt=32970' target='_blank'><span class='fa-brands fa-reddit-alien'></span></a></li>
+                    <li><a href='https://twitter.com/?lang=es' target='_blank'><span class='fa-brands fa-x-twitter'></span></a></li>
+                    <li><a href='https://web.whatsapp.com/' target='_blank'><span class='fa-brands fa-whatsapp'></span></a></li>
+                    <li><a href='https://www.instagram.com/' target='_blank'><span class='fa-brands fa-instagram'></span></a></li>
+                    <li><a href='https://snapchat.com/es' target='_blank'><span class='fa-brands fa-snapchat'></span></a></li>
+                </ul>
             </div>
         </footer>
         <script src='https://kit.fontawesome.com/f1a9439f03.js' crossorigin='anonymous'></script>
@@ -281,113 +289,5 @@
     </html>";
     }
 
-    // function carrousel_comentarios($datos){
-    //     //Copiar del index y llamar
-    //     echo"<section class='container carrusel rounded my-5'>
-    //     <div id='carouselExampleCaptions' class='carousel carousel-dark slide'>
-    //             <div class='carousel-indicators'>
-    //                 <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' class='active' aria-current='true'></button>
-    //                 <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1' class='active' aria-current='true'></button>
-    //                 <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2' class='active' aria-current='true'></button>
-    //                 <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='3' class='active' aria-current='true'></button>
-    //                 <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='4' class='active' aria-current='true'></button>
-    //             </div>
-    //             <div class='carousel-inner'>
-    //                 <div class='carousel-item active  justify-content-around'>";
-    //                     $nomFoto=$datos[0]["foto"];
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block'>
-    //                     <div class='carousel-caption d-none d-md-block m-auto w-25'>
-    //                         <h5><b>";
-    //                             echo $datos[0]["socio"];
-    //                             echo"</b>-";
-    //                             echo $datos[0]["proyecto"];
-    //                             echo"</h5><p>";
-    //                             echo $datos[0]["texto"];
-    //                             echo"</p>
-    //                         <span class='text-secondary'>";
-    //                             echo ordenarFecha($datos[0]["fecha"]);
-    //                             echo"</span>
-    //                     </div>";
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block carrFoto'>
-    //                 </div>
-    //                 <div class='carousel-item'>";
-    //                     $nomFoto=$datos[1]["foto"];
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block'>
-    //                     <div class='carousel-caption d-none d-md-block m-auto w-25'>
-    //                         <h5><b>";
-    //                             echo $datos[1]["socio"];
-    //                             echo"</b>-";
-    //                             echo $datos[1]["proyecto"];
-    //                             echo"</h5><p>";
-    //                             echo $datos[1]["texto"];
-    //                             echo"</p>
-    //                         <span class='text-secondary'>";
-    //                             echo ordenarFecha($datos[1]["fecha"]);
-    //                             echo"</span>
-    //                     </div>";
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block carrFoto'>
-    //                 </div>
-    //                 <div class='carousel-item'>";
-    //                     $nomFoto=$datos[2]["foto"];
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block'>
-    //                     <div class='carousel-caption d-none d-md-block m-auto w-25'>
-    //                         <h5><b>";
-    //                             echo $datos[2]["socio"];
-    //                             echo"</b>-";
-    //                             echo $datos[2]["proyecto"];
-    //                             echo"</h5><p>";
-    //                             echo $datos[2]["texto"];
-    //                             echo"</p>
-    //                         <span class='text-secondary'>";
-    //                             echo ordenarFecha($datos[2]["fecha"]);
-    //                             echo"</span>
-    //                     </div>";
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block carrFoto'>
-    //                 </div>
-    //                 <div class='carousel-item'>";
-    //                     $nomFoto=$datos[3]["foto"];
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block'>
-    //                     <div class='carousel-caption d-none d-md-block m-auto w-25'>
-    //                         <h5><b>";
-    //                             echo $datos[3]["socio"];
-    //                             echo"</b>-";
-    //                             echo $datos[3]["proyecto"];
-    //                             echo"</h5><p>";
-    //                             echo $datos[3]["texto"];
-    //                             echo"</p>
-    //                         <span class='text-secondary'>";
-    //                             echo ordenarFecha($datos[3]["fecha"]);
-    //                             echo"</span>
-    //                     </div>";
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block carrFoto'>
-    //                 </div>
-    //                 <div class='carousel-item'>";
-    //                     $nomFoto=$datos[4]["foto"];
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block'>
-    //                     <div class='carousel-caption d-none d-md-block m-auto w-25'>
-    //                         <h5><b>";
-    //                             echo $datos[4]["socio"];
-    //                             echo"</b>-";
-    //                             echo $datos[4]["proyecto"];
-    //                             echo"</h5><p>";
-    //                             echo $datos[4]["texto"];
-    //                             echo"</p>
-    //                         <span class='text-secondary'>";
-    //                             echo ordenarFecha($datos[4]["fecha"]);
-    //                             echo"</span>
-    //                     </div>";
-    //                     echo "<img src='./assets/proyectos/$nomFoto' class='d-block carrFoto'>
-    //                 </div>
-    //             </div>
-    //             <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='prev'>
-    //                 <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-    //                 <span class='visually-hidden'>Previous</span>
-    //             </button>
-    //             <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='next'>
-    //                 <span class='carousel-control-next-icon' aria-hidden='true'></span>
-    //                 <span class='visually-hidden'>Next</span>
-    //             </button>
-    //         </div>
-    //     </section>";
-    // }
+
 ?>

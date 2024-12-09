@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
 
     <link rel="icon" href="../assets/logor.png">
@@ -55,42 +58,7 @@
             echo"</tbody>
             </table>";
         }
-                  
-        echo"</article>
-            </section><section class='container p-5' border='0'>
-        <article class='row text-center border border-success-subtle px-4'>";
-        for($cont=0; $cont<=1; $cont++){
-            echo"<h2  class='py-5'>Socios ".$socios[2][$cont]."</h2>
-            <table border=0>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>NICK</th>
-                        <th>CONTRASEÑA</th>
-                    </tr>
-                </thead>
-                <tbody>";
-                    foreach($socios[$cont] as $dato){
-                        echo"<tr>
-                            <td>$dato[id]</td>
-                            <td>$dato[nombre]</td>
-                            <td>$dato[nick]</td>
-                            <td>$dato[pass]</td>
-                            <td class='d-flex justify-content-evenly'>";
-                                if($cont==0 && $dato["id"]!=0){//Evitar desactivar al administrador
-                                    echo"<a href='../controladores/controlador_socios.php?verSoc=$dato[id]'>
-                                        <button type='button' class='btn btn-warning'>Modificar socio</button>
-                                    </a>
-                                    <a href='../controladores/controlador_socios.php?borrarSoc=$dato[id]'>
-                                        <button type='button' class='btn btn-danger'>Desactivar socio</button>
-                                    </a>";
-                                }                                
-                            echo"</td>
-                        </tr>";
-                    } 
-            echo"</tbody></table>";
-        }
+
         echo"</article></section>
         <section class='container p-5'>
             <form action='../controladores/controlador_socios.php' method='post' class='row border border-success-subtle pt-5' enctype='multipart/form-data'>
@@ -130,7 +98,42 @@
                 </div>   
             </form>
         </section>";
-
+                  
+        echo"</article>
+            </section><section class='container p-5' border='0'>
+        <article class='row text-center border border-success-subtle px-4'>";
+        for($cont=0; $cont<=1; $cont++){
+            echo"<h2  class='py-5'>Socios ".$socios[2][$cont]."</h2>
+            <table border=0>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>NICK</th>
+                        <th>CONTRASEÑA</th>
+                    </tr>
+                </thead>
+                <tbody>";
+                    foreach($socios[$cont] as $dato){
+                        echo"<tr>
+                            <td>$dato[id]</td>
+                            <td>$dato[nombre]</td>
+                            <td>$dato[nick]</td>
+                            <td>$dato[pass]</td>
+                            <td class='d-flex justify-content-evenly'>";
+                                if($cont==0 && $dato["id"]!=0){//Evitar desactivar al administrador
+                                    echo"<a href='../controladores/controlador_socios.php?verSoc=$dato[id]'>
+                                        <button type='button' class='btn btn-warning'>Modificar socio</button>
+                                    </a>
+                                    <a href='../controladores/controlador_socios.php?borrarSoc=$dato[id]'>
+                                        <button type='button' class='btn btn-danger'>Desactivar socio</button>
+                                    </a>";
+                                }                                
+                            echo"</td>
+                        </tr>";
+                    } 
+            echo"</tbody></table>";
+        }
     ?>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

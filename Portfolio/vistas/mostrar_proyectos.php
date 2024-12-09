@@ -39,7 +39,39 @@
     echo"</section>";        
 
     if($usuario==0){
-        echo"<section class='container extra'>
+
+        echo"<section class='container p-5 my-5 border border-success-subtle'>
+            <form action='../controladores/controlador_proyectos.php' method='post' class='row' enctype='multipart/form-data'>
+                <h2 class='text-center'>Insertar proyecto nuevo</h2>
+                <div class='row justify-content-center p-3'>
+                    <div class='col-md-5'>
+                        <div class='input-group mb-3'>
+                            <span class='input-group-text' id='basic-addon1'>Nombre</span>
+                            <input type='text' class='form-control' name='nomIn' placeholder='Nombre de la proyecto' aria-describedby='basic-addon1' required>
+                        </div> 
+                    </div>       
+                    
+                    <div class='col-md-5'>
+                        <div class='input-group'>
+                            <input type='file' class='form-control' id='inArchivs' name='inFls' aria-describedby='inFls' aria-label='Upload' required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class='row justify-content-center'>
+                    <div class='col-md-11 form-floating'>
+                        <textarea class='form-control' id='comentario' name='descIn' required></textarea>
+                        <label for='comentario'>Descripción del proyecto...</label>
+                    </div>
+                </div>                
+                                
+                <div class='d-flex justify-content-center p-3'>
+                    <button type='submit' class='btn' name='inPry'>Insertar proyecto</button>
+                </div>   
+            </form>
+        </section>
+        
+        <section class='container extra'>
         <article class='row border border-success-subtle p-5 mt-5'>
         <h2 class='text-center pb-5'>Todos los proyectos</h2>
             <table border='0'>
@@ -85,39 +117,7 @@
                 } 
             echo"</tbody>
             </table>
-        </section>
-        
-        <section class='container p-5 mb-5 border border-success-subtle'>
-            <form action='../controladores/controlador_proyectos.php' method='post' class='row' enctype='multipart/form-data'>
-                <h2 class='text-center'>Insertar proyecto nueva</h2>
-                <div class='row justify-content-center p-3'>
-                    <div class='col-md-5'>
-                        <div class='input-group mb-3'>
-                            <span class='input-group-text' id='basic-addon1'>Nombre</span>
-                            <input type='text' class='form-control' name='nomIn' placeholder='Nombre de la proyecto' aria-describedby='basic-addon1' required>
-                        </div> 
-                    </div>       
-                    
-                    <div class='col-md-5'>
-                        <div class='input-group'>
-                            <input type='file' class='form-control' id='inArchivs' name='inFls' aria-describedby='inFls' aria-label='Upload' required>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class='row justify-content-center'>
-                    <div class='col-md-11 form-floating'>
-                        <textarea class='form-control' id='comentario' name='descIn' required></textarea>
-                        <label for='comentario'>Descripción del proyecto...</label>
-                    </div>
-                </div>                
-                                
-                <div class='d-flex justify-content-center p-3'>
-                    <button type='submit' class='btn' name='inPry'>Insertar proyecto</button>
-                </div>   
-            </form>
         </section>";
-
     }else{
         echo"<section class='container'>";
         foreach($listcamp as $campo){
@@ -130,9 +130,9 @@
 
                 if(isset($muestras[$campo["id"]])){
                     for($i=0; $i<sizeof($muestras[$campo["id"]]); $i++){                
-                        echo"<div class='col-md-6 card mb-3 g-0' style='max-width: 540px;'>
-                            <div class='row'>
-                                <div class='col-md-4'>
+                        echo"<div class='col-md-6 card mb-3  g-0' style='max-width: 540px;'>
+                            <div class='row m-auto p-1'>
+                                <div class='col-md-4 m-auto'>
                                 <img src='../assets/proyectos/".$muestras[$campo["id"]][$i]["foto"]."' class='img-fluid rounded' alt='Portada de ".$muestras[$campo["id"]][$i]["proyecto"]."'>
                                 </div>
                                 <div class='col-md-8'>

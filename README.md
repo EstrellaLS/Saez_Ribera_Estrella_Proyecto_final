@@ -1,6 +1,6 @@
 # Saez_Ribera_Estrella_Proyecto_final
 
-USUARIOS DE LA APLICACIÓN:
+USUARIO:CONTRASEÑA DE LA APLICACIÓN:
 ->admin:admin
 ->carlos:carlos
 ->juan:juan

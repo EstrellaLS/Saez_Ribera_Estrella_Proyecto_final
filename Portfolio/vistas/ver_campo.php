@@ -15,10 +15,10 @@
                         <tbody>";
                     foreach($datos as $dato){
                         $fecha=ordenarFecha($dato["fecha"]);
-                        echo"<tr><td class='fs-4'>$dato[proyecto]</td>
-                        <td>$fecha</td>
+                        echo"<tr><td class='fs-4' style='width:20%'>$dato[proyecto]</td>
+                        <td style='width:15%'>$fecha</td>
                         <td>
-                            <img src='../assets/proyectos/$dato[foto]' class='col-md-4 img-fluid rounded maxim' alt='Imagen del proyecto'>       
+                            <img src='../assets/proyectos/$dato[foto]' class='img-fluid rounded maxim' alt='Imagen del proyecto'>       
                         </td></tr>";
                     } 
                     echo"</tbody>

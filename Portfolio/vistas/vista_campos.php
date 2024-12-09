@@ -31,9 +31,9 @@
     <article class='row p-5 justify-content-center border border-success-subtle'>
     <h2 class='text-center pb-5'>Todos ls campos</h2>";       
     foreach($listadoCamp as $dato){
-        echo"<div class='col-md-4 p-3'>                    
+        echo"<div class='col-md-3 p-3'>                    
             <a href='../controladores/controlador_campos.php?vercamp=$dato[id]&nomCamp=$dato[nombre]&logC=$dato[logotipo]' class='text-decoration-none text-reset d-flex flex-column align-items-center'>
-                <img src='../assets/campos/$dato[logotipo]' class='col-md-4 img-fluid rounded maxim' alt='Logo de la campo'>
+                <img src='../assets/campos/$dato[logotipo]' class='img-fluid rounded maxim' alt='Logo de la campo'>
                 <p>$dato[nombre]</p>
             </a>
         </div>";

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
 
     <link rel="icon" href="./assets/logor.png">
@@ -24,12 +27,12 @@
         
         echo "<h1 class='text-center pb-5'>PORTFOLIO DE ESTRELLA</h1>";
         
-        //Listar proyectos + nuevas por cada campo
+        //Listar proyectos + nuevos por cada campo
         $camp=new modelo_campos();
         $listcamp=$camp->ver_campos();
         echo"<section class='container'>";
         foreach($listcamp as $campo){
-            echo"<article class='row border border-success-subtle my-2'> 
+            echo"<article class='row border border-success-subtle mb-5'> 
                 <div class='d-flex justify-content-center align-items-center'>
                     <h2 class='text-center p-4'>$campo[nombre]</h2>
                     <img src='./assets/campos/$campo[logotipo]' class='img-fluid rounded logo' alt='Portada de $campo[nombre]'>
@@ -37,14 +40,14 @@
                 <div class='row justify-content-evenly'> ";
             
             $campoV=new modelo_muestra();
-            $listcampoV=$campoV->ultims_muestras($campo);
+            $listcampoV=$campoV->ultims_muestras($campo["id"]);
                 foreach($listcampoV as $c){
                     echo"<div class='col-md-6 card mb-3 g-0' style='max-width: 540px;'>
-                        <div class='row'>
-                            <div class='col-md-4'>
+                        <div class='row m-auto p-1'>
+                            <div>
                             <img src='./assets/proyectos/$c[foto]' class='img-fluid rounded' alt='Portada de $c[proyecto]'>
                             </div>
-                            <div class='col-md-8'>
+                            <div>
                             <div class='card-body text-center d-flex flex-column justify-content-center h-100'>
                                 <h5 class='card-title'>$c[proyecto]</h5>
                                 <p class='card-text'>";
@@ -60,12 +63,6 @@
         echo"</section>";
         unset($camp);
         unset($campoV);
-
-        // //Últimos 5 comentarios        
-        // $com=new modelo_comentario();
-        // $datos=$com->ultims_comentarios();
-        // carrousel_comentarios($datos);        
-        // unset($com);
         
         pintar_footer();
     ?>
