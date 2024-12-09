@@ -105,8 +105,6 @@
                 $descPryNw=$_POST["descIn"];
                 $proyectoParaIn=new modelo_proyectos();
                 $id=$_POST["id"];
-                // $nombre=$_POST["nomIn"];
-                // $descrip=$_POST["descIn"];
 
                 $proyectoMod=new modelo_proyectos();  
                 $proyectoMod->modificar_proyecto($id,$nomPryNew,$descPryNw,$nombre_final);

@@ -9,3 +9,9 @@ USUARIO:CONTRASEÑA DE LA APLICACIÓN:
 ->esteban:coesta
 ->david:david
 ->estre:estre
+
+---------------------------------------
+
+DESCRIPCIÓN:
+Este proyecto es una recopilación de mis trabajos realizados sobre mi historia con la fotografía, los usuarios podrán acceder a los contenidos publicados con acceso restringidos para algunas secciones.
+Básicamente, mediante supuestas exposiciones, el administrador podrá gestionar cada apartado del sitio web.
