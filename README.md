@@ -13,5 +13,5 @@ USUARIO:CONTRASEÑA DE LA APLICACIÓN:
 ---------------------------------------
 
 DESCRIPCIÓN:
-Este proyecto es una recopilación de mis trabajos realizados sobre mi historia con la fotografía, los usuarios podrán acceder a los contenidos publicados con acceso restringidos para algunas secciones.
+Este proyecto es una recopilación de mis trabajos realizados sobre mi pasado con la fotografía, los usuarios podrán acceder a los contenidos publicados con acceso restringidos para algunas secciones.
 Básicamente, mediante supuestas exposiciones, el administrador podrá gestionar cada apartado del sitio web.

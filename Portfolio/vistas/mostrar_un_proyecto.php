@@ -107,7 +107,7 @@
                     </table>
                 </article>"; 
             }else{
-                echo "<p class='py-4 text-center'>No hay comentarios de esta proyecto.</p>";
+                echo "<p class='py-4 text-center'>No hay comentarios de este proyecto.</p>";
             }
         } 
     ?> 
